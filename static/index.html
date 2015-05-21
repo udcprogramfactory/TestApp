@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The Sample App</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="resources/css/external/c3/c3.min.css">
+    <link rel="stylesheet" href="resources/css/external/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/external/bootstrap/bootstrap-theme.min.css">
+
+    <!-- Custom CSS files -->
+    <link rel="stylesheet" href="resources/css/custom/style.css">
+
+    <!-- Java script files -->
+    <!-- External files -->
+    <script src="resources/js/libs/angularjs/angular.min.js"></script>
+    <script src="resources/js/libs/angularjs/angular-route.min.js"></script>
+    <script src="resources/js/libs/d3/d3.min.js"></script>
+    <script src="resources/js/libs/d3/c3.min.js"></script>
+    <script src="resources/js/libs/bootstrap/bootstrap.min.js"></script>
+    <!-- Custom Java script files -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/shared/ajaxService.js"></script>
+    <script src="app/views/dashboard/DashboardController.js"></script>
+
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body ng-app="application">
+    <main ng-controller="AppController">
+        <header>
+        </header>
+        <section class="selectors" ng-include="'selectors.html'">
+           
+        </section>
+        <section class="main-container">
+            <nav class="navigation-container" ng-class="leftMenuVisibility? 'visible' : 'invisible' ">
+                <ul>
+                    <li>Nav 1</li>
+                    <li>Nav 2</li>
+                    <li>Nav 3</li>
+                    <li>Nav 4</li>
+                </ul>
+
+
+            </nav>
+
+            <section class="content" ng-view="">
+
+            </section>
+
+            <span class="menu-indicator" ng-click="  leftMenuVisibility = !leftMenuVisibility "></span>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>
